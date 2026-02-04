@@ -44,9 +44,8 @@
             node-version: 18
         - name: Install Dependencies
           run: npm install
-        - name: Code Coverage
-          run: npm run code-coverage
-          continue-on-error: true
+        - continue-on-error: true
+          run: npm run coverage
         - name: Archive Test Result
           if: always()
           uses: actions/upload-artifact@v4
@@ -54,5 +53,6 @@
            name: Code-Coverage-Result
            path: coverage
            retention-days: 5
+
 
 
